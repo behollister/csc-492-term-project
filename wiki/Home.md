@@ -18,4 +18,3 @@ The project is in its initial planning and background-study phase. Content will 
 - Distinguish confirmed decisions from proposals and open questions.
 - Define new specialized terms in the glossary.
 - Add reviewed literature to the papers table.
-
