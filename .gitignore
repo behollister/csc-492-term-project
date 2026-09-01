@@ -1,0 +1,21 @@
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Common generated directories
+node_modules/
+dist/
+build/
+coverage/
+__pycache__/
+.pytest_cache/
+.venv/
+
