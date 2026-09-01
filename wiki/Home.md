@@ -7,6 +7,7 @@ Welcome to the project wiki. This wiki is the shared reference for the capstone 
 - [[Glossary]] — definitions of project and domain terminology
 - [[Papers]] — academic literature and technical sources reviewed by the team
 - [[Architecture]] — the evolving system structure and major design decisions
+- [[Supporting Technology]] — the planned web application stack and open technology decisions
 
 ## Current status
 

@@ -5,7 +5,9 @@ This page is the living description of the proposed system architecture. It shou
 ## Status
 
 **Phase:** Background research and requirements discovery  
-**Architecture status:** Not yet selected
+**Architecture status:** Initial web application structure proposed
+
+The current plan is a browser-based JavaScript client connected to a Node.js HTTP API. See [[Supporting Technology]] for the stack plan and the status of individual technology decisions.
 
 ## Architectural goals
 
@@ -34,7 +36,10 @@ Document the following when the project topic is selected:
 
 | Component | Responsibility | Inputs | Outputs | Technology | Status |
 |---|---|---|---|---|---|
-| _To be determined_ | | | | | Proposed |
+| Web client | Present the user interface and collect user input | User actions and API responses | Rendered views and API requests | HTML, CSS, and JavaScript | Selected |
+| Application API | Expose application operations and coordinate requests | HTTPS requests containing JSON | JSON responses and HTTP status codes | Node.js with Express or Fastify | Proposed |
+| Business-logic layer | Apply application rules independently of HTTP and storage details | Validated application data | Results or domain errors | JavaScript modules | Proposed |
+| Data-access layer | Read and write persistent application data | Queries or repository calls | Stored or retrieved records | PostgreSQL or SQLite with a query builder or ORM | To be evaluated |
 
 ## Data
 
@@ -42,7 +47,16 @@ Describe the data model, ownership, storage, retention, validation, and any sens
 
 ## Interfaces and data flow
 
-Describe how components communicate and trace the main user or system workflows from input to result. Add diagrams after the core components are identified.
+The initial request flow is:
+
+1. A user performs an action in the browser.
+2. The web client sends an HTTPS request to the Node.js API.
+3. The API validates the request and invokes the appropriate business logic.
+4. The business-logic layer reads or writes data through the data-access layer when necessary.
+5. The API returns a JSON response and an appropriate HTTP status code.
+6. The web client updates the interface or presents a useful error message.
+
+The exact endpoints and data schemas will be defined after the domain resources are identified.
 
 ## Deployment
 
@@ -66,4 +80,4 @@ Major decisions should record the context, considered alternatives, decision, ra
 - Which users and external systems are inside the initial scope?
 - What data will the system process, and where will it originate?
 - Which architectural constraints follow from the capstone timeline?
-
+- Which API framework, frontend approach, and database best fit the confirmed requirements?
